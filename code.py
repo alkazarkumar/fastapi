@@ -31,6 +31,12 @@ def get_city(city_id : int):
     return db[city_id-1]
 
 
+# add states route
+@app.get("/state/{state_id}")
+def get_state(state_id : int):
+    return db[state_id-1]
+
+
 @app.post("/cities")
 def create_city(city : City):
     db.append(city.dict())
